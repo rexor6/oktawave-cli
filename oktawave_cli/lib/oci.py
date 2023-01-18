@@ -34,6 +34,7 @@ class OciHelper(object):
             return instances.items
         except ApiException as api_error:
             logger.error("Error while getting OCI list %s", api_error)
+            # TODO should return None
             return []
 
     def get_oci(self, oci_name=None, oci_id=None):
@@ -47,6 +48,7 @@ class OciHelper(object):
             logging.error("Bad input, you need to provide OCI Name or ID")
             return None
         try:
+            #TODO - exception is caught in get_oci_list function
             instances = self.get_oci_list()
             if len(instances) == 0:
                 return []
