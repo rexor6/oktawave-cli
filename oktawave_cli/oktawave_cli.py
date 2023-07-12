@@ -8,6 +8,7 @@ from .commands.oci import *
 from .commands.ocs import *
 from .commands.storage import *
 from .commands.account import *
+from .commands.auth import *
 from .common import Api
 
 logging.basicConfig(level=logging.INFO,
@@ -52,3 +53,4 @@ cli.add_command(oci)
 cli.add_command(ocs)
 cli.add_command(storage)
 cli.add_command(account)
+cli.add_command(auth)
